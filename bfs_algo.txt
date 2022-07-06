@@ -1,0 +1,66 @@
+Sub bfs_algo()
+Dim S, G As String
+S = Range("Q5").Value
+G = Range("Q7").Value
+Call BFS(Range(S), Range(G))
+End Sub
+Public Sub BFS(ByVal StartNode As Range, ByVal GoalNode As Range)
+    Dim Queue As Object
+    Set Queue = CreateObject("System.Collections.ArrayList")
+
+    Dim VisitedNodes As Collection
+    Set VisitedNodes = New Collection  'no nodes are visited yet
+
+    Queue.Add StartNode  'begin with start node
+    VisitedNodes.Add StartNode.Address(False, False), StartNode.Address(False, False)
+
+    Do While Queue.Count > 0  'as long as queue is not empty
+        Dim Node As Range
+        Set Node = Queue(0)   'take first element of the queue
+        Queue.RemoveAt 0
+
+        If Node.Address = GoalNode.Address Then  'test if goal node is found
+            MsgBox "Goal found"
+
+            'Backtracing from goal to start to find the path
+            Dim BackNode As String
+            BackNode = Node.Address(False, False)
+            Do
+                Range(BackNode).Value = "•"
+                Range(BackNode).Font.Color = vbRed
+                BackNode = VisitedNodes.Item(BackNode)
+            Loop While BackNode <> StartNode.Address(False, False)
+
+            StartNode.Value = "S"
+            GoalNode.Value = "G"
+
+            Exit Sub
+
+        Else   'all following nodes, …
+
+            Dim Child As Range
+            For Each Child In Union(Node.Offset(0, -1), Node.Offset(-1, 0), Node.Offset(0, 1), Node.Offset(1, 0)).Cells ' … which are adjacent cells (no diagonal cells, just left, top, right, bottom) …
+                If Child.Interior.Color <> vbBlack Then  '… which are no maze borders …
+                    If Not ExistsInCollection(VisitedNodes, Child.Address(False, False)) Then   '… which are not visited yet …
+                        Queue.Add Child  '… are added to the queue …
+                        VisitedNodes.Add Node.Address(False, False), Child.Address(False, False)  '… and marked as visited
+                    End If
+                End If
+            Next Child
+
+        End If
+    Loop
+
+    MsgBox "Goal cannot be found."  'goal node cannot be reached
+End Sub
+
+
+'function to test if a key exists in a collection
+Public Function ExistsInCollection(Col As Collection, Key As Variant) As Boolean
+    On Error GoTo err
+    ExistsInCollection = True
+    IsObject Col.Item(Key)
+    Exit Function
+err:
+    ExistsInCollection = False
+End Function

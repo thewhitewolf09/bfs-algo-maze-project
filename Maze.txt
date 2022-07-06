@@ -1,0 +1,308 @@
+Sub Maze()
+'
+' maze Macro
+'
+' Keyboard Shortcut: Ctrl+Shift+M
+'
+    Range("A1:N20").Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    Selection.Borders(xlInsideVertical).LineStyle = xlNone
+    Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
+    Range("N10").Select
+    ActiveWindow.SmallScroll Down:=-18
+    Range("A1").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    Selection.AutoFill Destination:=Range("A1:N1"), Type:=xlFillDefault
+    Range("A1:N1").Select
+    ActiveWindow.SmallScroll Down:=-3
+    Range("N1").Select
+    Selection.AutoFill Destination:=Range("N1:N20"), Type:=xlFillDefault
+    Range("N1:N20").Select
+    Range("N20").Select
+    Selection.AutoFill Destination:=Range("A20:N20"), Type:=xlFillDefault
+    Range("A20:N20").Select
+    Range("A20").Select
+    Selection.AutoFill Destination:=Range("A2:A20"), Type:=xlFillDefault
+    Range("A2:A20").Select
+    Range("A3").Select
+    Selection.AutoFill Destination:=Range("A3:C3"), Type:=xlFillDefault
+    Range("A3:C3").Select
+    Range("C3").Select
+    Selection.AutoFill Destination:=Range("C3:C5"), Type:=xlFillDefault
+    Range("C3:C5").Select
+    Range("A7").Select
+    Selection.AutoFill Destination:=Range("A7:C7"), Type:=xlFillDefault
+    Range("A7:C7").Select
+    Range("C9").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    Selection.AutoFill Destination:=Range("C9:C11"), Type:=xlFillDefault
+    Range("C9:C11").Select
+    Range("C10").Select
+    Selection.AutoFill Destination:=Range("C10:F10"), Type:=xlFillDefault
+    Range("C10:F10").Select
+    Range("E10").Select
+    Selection.AutoFill Destination:=Range("E8:E10"), Type:=xlFillDefault
+    Range("E8:E10").Select
+    Range("E1").Select
+    Selection.AutoFill Destination:=Range("E1:E2"), Type:=xlFillDefault
+    Range("E1:E2").Select
+    Selection.AutoFill Destination:=Range("E1:E4"), Type:=xlFillDefault
+    Range("E1:E4").Select
+    Range("E4").Select
+    Selection.AutoFill Destination:=Range("E4:G4"), Type:=xlFillDefault
+    Range("E4:G4").Select
+    Range("F4").Select
+    Selection.AutoFill Destination:=Range("F4:F6"), Type:=xlFillDefault
+    Range("F4:F6").Select
+    Range("F6").Select
+    Selection.AutoFill Destination:=Range("E6:F6"), Type:=xlFillDefault
+    Range("E6:F6").Select
+    Range("E8").Select
+    Selection.AutoFill Destination:=Range("E8:G8"), Type:=xlFillDefault
+    Range("E8:G8").Select
+    Selection.AutoFill Destination:=Range("E8:H8"), Type:=xlFillDefault
+    Range("E8:H8").Select
+    Range("H8").Select
+    Selection.AutoFill Destination:=Range("H8:H11"), Type:=xlFillDefault
+    Range("H8:H11").Select
+    Range("G1").Select
+    Selection.Cut Destination:=Range("G2")
+    Range("G2").Select
+    Selection.Cut Destination:=Range("G1")
+    Range("G1").Select
+    Selection.AutoFill Destination:=Range("G1:G2"), Type:=xlFillDefault
+    Range("G1:G2").Select
+    Range("I1").Select
+    Selection.AutoFill Destination:=Range("I1:I6"), Type:=xlFillDefault
+    Range("I1:I6").Select
+    Range("I6").Select
+    Selection.AutoFill Destination:=Range("H6:I6"), Type:=xlFillDefault
+    Range("H6:I6").Select
+    Range("I3").Select
+    Selection.Cut Destination:=Range("J4")
+    Range("K6").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    Selection.AutoFill Destination:=Range("K6:L6"), Type:=xlFillDefault
+    Range("K6:L6").Select
+    Range("L6").Select
+    Selection.AutoFill Destination:=Range("L3:L6"), Type:=xlFillDefault
+    Range("L3:L6").Select
+    Range("J8").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    Selection.AutoFill Destination:=Range("J8:L8"), Type:=xlFillDefault
+    Range("J8:L8").Select
+    Selection.AutoFill Destination:=Range("J8:M8"), Type:=xlFillDefault
+    Range("J8:M8").Select
+    Range("J8").Select
+    Selection.AutoFill Destination:=Range("J8:J14"), Type:=xlFillDefault
+    Range("J8:J14").Select
+    Range("J14").Select
+    Selection.AutoFill Destination:=Range("J14:L14"), Type:=xlFillDefault
+    Range("J14:L14").Select
+    Range("L14").Select
+    Selection.AutoFill Destination:=Range("L10:L14"), Type:=xlFillDefault
+    Range("L10:L14").Select
+    Range("N16").Select
+    Selection.AutoFill Destination:=Range("K16:N16"), Type:=xlFillDefault
+    Range("K16:N16").Select
+    Range("K16").Select
+    Selection.AutoFill Destination:=Range("K16:K18"), Type:=xlFillDefault
+    Range("K16:K18").Select
+    Range("K18").Select
+    Selection.Cut Destination:=Range("L18")
+    Range("L18").Select
+    Selection.Cut Destination:=Range("K18")
+    Range("K18").Select
+    Selection.AutoFill Destination:=Range("K18:L18"), Type:=xlFillDefault
+    Range("K18:L18").Select
+    Range("E10").Select
+    Selection.AutoFill Destination:=Range("E10:E13"), Type:=xlFillDefault
+    Range("E10:E13").Select
+    Range("E13").Select
+    Selection.AutoFill Destination:=Range("C13:E13"), Type:=xlFillDefault
+    Range("C13:E13").Select
+    Range("C13").Select
+    Selection.AutoFill Destination:=Range("C13:C14"), Type:=xlFillDefault
+    Range("C13:C14").Select
+    Range("C16").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    Selection.AutoFill Destination:=Range("B16:C16"), Type:=xlFillDefault
+    Range("B16:C16").Select
+    Range("C16").Select
+    Selection.AutoFill Destination:=Range("C16:C18"), Type:=xlFillDefault
+    Range("C16:C18").Select
+    Range("C18").Select
+    Selection.AutoFill Destination:=Range("C18:D18"), Type:=xlFillDefault
+    Range("C18:D18").Select
+    Range("F20").Select
+    Selection.AutoFill Destination:=Range("F15:F20"), Type:=xlFillDefault
+    Range("F15:F20").Select
+    Range("F15").Select
+    Selection.AutoFill Destination:=Range("F15:G15"), Type:=xlFillDefault
+    Range("F15:G15").Select
+    Range("F15:G15").Select
+    Selection.ClearContents
+    Range("F15:G15").Select
+    Selection.ClearContents
+    Range("G15").Select
+    Selection.AutoFill Destination:=Range("G13:G15"), Type:=xlFillDefault
+    Range("G13:G15").Select
+    Range("G13").Select
+    Selection.AutoFill Destination:=Range("G13:H13"), Type:=xlFillDefault
+    Range("G13:H13").Select
+    Range("H13").Select
+    Selection.AutoFill Destination:=Range("H13:H14"), Type:=xlFillDefault
+    Range("H13:H14").Select
+    Range("F18").Select
+    Selection.AutoFill Destination:=Range("F18:I18"), Type:=xlFillDefault
+    Range("F18:I18").Select
+    Range("I18").Select
+    Selection.AutoFill Destination:=Range("I16:I18"), Type:=xlFillDefault
+    Range("I16:I18").Select
+    Range("G15").Select
+    Selection.AutoFill Destination:=Range("G15:G16"), Type:=xlFillDefault
+    Range("G15:G16").Select
+    Range("P5").Select
+    ActiveCell.FormulaR1C1 = "StartNode :"
+    Range("P7").Select
+    ActiveCell.FormulaR1C1 = "GoalNode :"
+    Columns("P:P").Select
+    Selection.ColumnWidth = 11.71
+    Range("P5").Select
+    Selection.Font.Bold = True
+    Selection.Font.Size = 12
+    Range("P7").Select
+    Selection.Font.Bold = True
+    Selection.Font.Size = 12
+    Range("P5").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorAccent1
+        .TintAndShade = 0.799981688894314
+        .PatternTintAndShade = 0
+    End With
+    Range("P7").Select
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorAccent1
+        .TintAndShade = 0.799981688894314
+        .PatternTintAndShade = 0
+    End With
+    Range("P5:Q5").Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    Selection.Borders(xlInsideVertical).LineStyle = xlNone
+    Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
+    Range("P7:Q7").Select
+    Selection.Borders(xlDiagonalDown).LineStyle = xlNone
+    Selection.Borders(xlDiagonalUp).LineStyle = xlNone
+    With Selection.Borders(xlEdgeLeft)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeTop)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeBottom)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    With Selection.Borders(xlEdgeRight)
+        .LineStyle = xlContinuous
+        .ColorIndex = 0
+        .TintAndShade = 0
+        .Weight = xlMedium
+    End With
+    Selection.Borders(xlInsideVertical).LineStyle = xlNone
+    Selection.Borders(xlInsideHorizontal).LineStyle = xlNone
+    Range("B2").Select
+    ActiveWindow.SmallScroll Down:=-6
+End Sub

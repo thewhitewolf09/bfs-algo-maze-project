@@ -1,0 +1,18 @@
+BFS(start_node, goal_node) {
+ for(all nodes i) visited[i] = false; // no nodes are visited in the beginning
+ queue.push(start_node);              // begin with start node
+ visited[start_node] = true;
+ while(! queue.empty() ) {            // as long as queue is not empty
+  node = queue.pop();                 // take first element of the queue
+  if(node == goal_node) {
+   return true;                       // test if goal node is found
+  }
+  foreach(child in expand(node)) {    // all following nodes, …
+   if(visited[child] == false) {      // … which are not visited yet …
+    queue.push(child);                // … are added to the queue …
+    visited[child] = true;            // … and marked as visited
+   }
+  }
+ }
+ return false;                        // goal node cannot be reached
+}
